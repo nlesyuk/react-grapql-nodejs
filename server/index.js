@@ -12,9 +12,8 @@ const db = {
 
 const rootResolver = {
   getAllUsers: () => db.users,
-  getUser: ({ id }) => db.users.find(user => user.id === +id),
+  getUser: ({ id }) => db.users.find(user => user.id == id),
   createUser: ({ input }) => {
-    console.log(input)
     const user = {
       id: Date.now(),
       ...input
